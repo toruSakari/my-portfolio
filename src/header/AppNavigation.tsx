@@ -10,17 +10,18 @@ type Props = {
   }
 }
 
-function AppNavigation(props:Props) {
+function AppNavigation(props: Props) {
+  const navigationItem = Object.keys(props.navigationInfo).map((item: string) => {
+    return (<li key={`navigation_${item}`} className={header.card_item}>
+      <a onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+        props.jumpToSection(event, props.navigationInfo[item].url)
+      }}
+        href={props.navigationInfo[item].url}>{item}</a>
+    </li>)
+  })
   return (
     <ul className={header.card_list}>
-      {Object.keys(props.navigationInfo).map((item: string) => {
-        return (<li key={`navigation_${item}`} className={header.card_item}>
-          <a onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-            props.jumpToSection(event, props.navigationInfo[item].url)
-          }}
-            href={props.navigationInfo[item].url}>{item}</a>
-        </li>)
-      })}
+      {navigationItem}
     </ul>
   );
 }

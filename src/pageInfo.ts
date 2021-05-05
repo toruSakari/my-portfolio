@@ -90,7 +90,7 @@ const PAGE_INFO = {
       }
     ]
   }
-}
+} as { [key: string]: any }
 
 
 export { PAGE_INFO }

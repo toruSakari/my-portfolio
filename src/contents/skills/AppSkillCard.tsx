@@ -3,18 +3,18 @@ import skill from './skill.module.scss';
 import { Skill, SkillCard } from '../../types/pageInfo';
 import Card from '../../atom/card/Card';
 
-function AppNavigation(props: Skill) {
+function AppSkillCard(props: Skill) {
   const skillItems = props.langs.map((_skill:SkillCard) => {
     const maxLevel = 5;
     let _skillLevels = []
     for (let i = 0; i < maxLevel; i++) {
       _skillLevels.push(
-        <span>
+        <span key={_skill.name + i}>
           {i < _skill.level ? '★' : '☆'}
         </span>)
     }
     return (
-      <Card element="li" elementClass={skill.card}>
+      <Card element="li" key={_skill.name} elementClass={skill.card}>
         <div className={skill.card_detail}>
           <h4 className={skill.card_title}>{_skill.name}</h4>
           <div className={skill.card_2col}>
@@ -41,4 +41,4 @@ function AppNavigation(props: Skill) {
 
 
 
-export default AppNavigation;
+export default AppSkillCard;

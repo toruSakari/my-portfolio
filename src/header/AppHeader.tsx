@@ -21,7 +21,7 @@ function AppHeader(props: Props) {
     })
   }
   const navigationInfo: Props = {}
-  Object.keys(props).map(_item => {
+  Object.keys(props).forEach(_item => {
     if (props[_item].url !== '#') navigationInfo[_item] = props[_item]
   })
   return (

@@ -12,7 +12,7 @@ function AppWorksCard(props: Work) {
   }
   return (
     <Card element="li" elementClass={work.card}>
-      <a href={props.pageUrl} target="_blank">
+      <a href={props.pageUrl} rel="noreferrer" target="_blank">
         <figure className={work.card_fig} style={bg}>
         </figure>
         <div className={work.card_detail}>
