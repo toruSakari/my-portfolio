@@ -1,0 +1,54 @@
+
+
+@import '../base.scss';
+
+.card{
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: map-get($theme-colors, 'firstColor');
+  box-shadow: 0 0 5px 0;
+  @include media-query(sm){
+    padding: 20px;
+  }
+  &_title a{
+    @include drawUnderline(map-get($theme-colors, 'fourthColor'));
+    text-decoration: none;
+    font-size: 24px;
+    color: map-get($text-colors, 'primary');
+    display: block;
+    @include media-query(sm){
+      font-size: 18px;
+    }
+  }
+  &_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_item{
+    list-style: none;
+    font-size: 18px;
+    font-weight: 600;
+    @include media-query(sm){
+      font-size: 14px;
+    }
+    & + li{
+      margin-left: 20px;
+    }
+    & a{
+      color: map-get($text-colors , 'primary');
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.4s ease-in-out;
+      @include drawUnderline(map-get($theme-colors, 'fourthColor'))
+    }
+  }
+
+}

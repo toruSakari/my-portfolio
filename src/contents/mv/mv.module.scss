@@ -1,0 +1,38 @@
+
+
+@import '../../base.scss';
+
+.app_mv{
+  height: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: url(/assets/Developer-activity-rafiki.svg) no-repeat right center;
+  background-size: 60%;
+  @include media-query(md){
+    position: relative;
+    height: auto;
+    align-items: flex-start;
+    background-position: right bottom;
+    padding-bottom: 80%;
+    box-sizing: border-box;
+  }
+  @include media-query(sm){
+    padding-bottom: 100%;
+  }
+  &_text{
+    color : map-get($text-colors , 'primary');
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    @include media-query(md){
+      position: absolute;
+      top: 0;
+      font-size: 5.20833333333vw;
+    }
+    @include media-query(sm){
+      font-size: 26px;
+    }
+  }
+}

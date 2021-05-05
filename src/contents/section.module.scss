@@ -1,0 +1,28 @@
+
+
+@import '../base.scss';
+
+section{
+  &:nth-of-type(odd){
+    background-color: map-get($theme-colors , 'secondColor' );
+  }
+  &:nth-of-type(even){
+    background-color: map-get($theme-colors , 'thirdColor' );
+  }
+}
+
+.app_section{
+  margin: 0;
+  padding: 80px 0;
+  box-sizing: border-box;
+  @include media-query(sm){
+    padding: 40px 0;
+  }
+  &_inner{
+    box-sizing: border-box;
+    max-width: 930px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+}

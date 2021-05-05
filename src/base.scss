@@ -1,0 +1,114 @@
+
+
+$theme-colors: (
+  firstColor: #cefff1,
+  secondColor: #ace7ef,
+  thirdColor: #a6acec,
+  fourthColor: #a56cc1
+);
+
+$text-colors: (
+  primary: #212121,
+  secondary: #757575,
+  divider: #BDBDBD,
+  text: #000000
+);
+
+$breakpoints: (
+    'sm': 'screen and (max-width: 400px)',
+    'md': 'screen and (max-width: 768px)',
+    'lg': 'screen and (max-width: 1000px)',
+    'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin media-query($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+@mixin title-lv2($image) {
+  font-size: 46px;
+  position: relative;
+  line-height: 100%;
+  text-align: center;
+  @include media-query(sm){
+    font-size: 26px;
+  }
+  &::before{
+      content: '';
+      background: url(/assets/#{$image}) no-repeat center center;
+      background-size: contain;
+      width: 46px;
+      height: 46px;
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 20px;
+      @include media-query(sm){
+        width: 26px;
+        height: 26px;
+      }
+  }
+}
+
+@mixin card {
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px 0 0 20px;
+  width: calc(280 / 890 * 100%);
+  box-shadow: 0 6px 7px -4px rgba(0,0,0,.2),0 11px 15px 1px rgba(0,0,0,.14),0 4px 20px 3px rgba(0,0,0,.12);
+  transform-style: preserve-3d;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.85, 1);
+  transform: scale(1.05);
+  list-style: none;
+  &:hover{
+    box-shadow: 0 6px 7px -4px rgba(0,0,0,.2),0 11px 15px 1px rgba(0,0,0,.14),0 4px 20px 3px rgba(0,0,0,.12) !important;
+    transform: scale(1.05) !important;
+  }
+  &:nth-child(3n + 1){
+    margin-left: 0;
+  }
+  @include media-query(md){
+    width: calc(50% - 10px);
+    &:nth-child(3n + 1){
+      margin-left: 20px;
+    }
+    &:nth-child(2n + 1){
+      margin-left: 0px;
+    }
+  }
+  @include media-query(sm){
+    width: 100%;
+    margin-left: 0!important;
+  }
+  &_detail{
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+@mixin drawUnderline($border-color) {
+  position: relative;
+  display: inline-block;
+  &::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: $border-color;
+    transition: .3s;
+  }
+  &:hover::after{
+    width: 100%;
+  }
+}
