@@ -7,8 +7,8 @@ import Card from '../../atom/card/Card'
 function AppWorksCard(props: Work) {
   const img = require('../../assets/' + props.image).default
   const bg = {
-    background: `url(${img}) no-repeat center center`,
-    backgroundSize: 'contain'
+    background: `url(${img}) no-repeat center top`,
+    backgroundSize: 'cover'
   }
   return (
     <Card element="li" elementClass={work.card}>

@@ -3,17 +3,27 @@
 @import '../../base.scss';
 
 .app_works{
-  color: map-get($text-colors , 'primary' );
+  color: map-get($text-colors , 'secondary' );
 }
 
 .title{
-  @include title-lv2('briefcase-solid.svg');
+  @include title-lv2;
+  color: map-get($text-colors , 'primary' );
+}
+
+.overview{
+  margin-top: 20px;
+  font-size: 18px;
+  color: map-get($text-colors , 'primary' );
+  @include media-query(sm){
+    font-size: 16px;
+  }
 }
 
 .card{
   @include card;
   & a{
-    color: map-get($text-colors , 'primary' );
+    color: map-get($text-colors , 'secondary' );
     text-decoration: none;
   }
   &_wrapper{
@@ -38,11 +48,19 @@
   }
   &_overview{
     font-size: 16px;
-    color: map-get($text-colors , 'secondary')
+    margin-top: 20px;
+    color: map-get($text-colors , 'secondary');
+    @include media-query(sm){
+      margin-top: 10px;
+      font-size: 14px;
+    }
   }
   &_tech{
     &_list{
       margin-top: 20px;
+      @include media-query(sm){
+        margin-top: 10px;
+      }
     }
     &_item{
       & + li{

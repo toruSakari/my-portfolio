@@ -1,15 +1,15 @@
 
 
 $theme-colors: (
-  firstColor: #cefff1,
-  secondColor: #ace7ef,
-  thirdColor: #a6acec,
-  fourthColor: #a56cc1
+  firstColor: #1976D2,
+  secondColor: #2196F3,
+  thirdColor: #FFFFFF,
+  fourthColor: #03A9F4
 );
 
 $text-colors: (
-  primary: #212121,
-  secondary: #757575,
+  primary: #fff,
+  secondary: #1976D2,
   divider: #BDBDBD,
   text: #000000
 );
@@ -32,27 +32,13 @@ $breakpoints: (
     }
 }
 
-@mixin title-lv2($image) {
+@mixin title-lv2 {
   font-size: 46px;
   position: relative;
   line-height: 100%;
   text-align: center;
   @include media-query(sm){
     font-size: 26px;
-  }
-  &::before{
-      content: '';
-      background: url(/assets/#{$image}) no-repeat center center;
-      background-size: contain;
-      width: 46px;
-      height: 46px;
-      display: inline-block;
-      vertical-align: bottom;
-      margin-right: 20px;
-      @include media-query(sm){
-        width: 26px;
-        height: 26px;
-      }
   }
 }
 
@@ -86,8 +72,10 @@ $breakpoints: (
     }
   }
   @include media-query(sm){
+    max-width: 250px;
     width: 100%;
-    margin-left: 0!important;
+    margin-left: auto!important;
+    margin-right: auto;
   }
   &_detail{
     padding: 20px;

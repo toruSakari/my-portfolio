@@ -3,6 +3,8 @@ import skill from './skill.module.scss';
 import AppSkillCard from './AppSkillCard';
 import AppContent from '../AppContes';
 import { Skills, Skill } from '../../types/pageInfo'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
   name: string;
@@ -18,7 +20,7 @@ function AppSkill(props:Props) {
   return (
     <AppContent name={props.name}>
       <div className={skill.app_skill}>
-        <h2 className={skill.title}>Skill</h2>
+        <h2 className={skill.title}><FontAwesomeIcon icon={faCode} />Skill</h2>
         {skillItems}
       </div>
     </AppContent>

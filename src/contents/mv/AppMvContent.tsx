@@ -33,16 +33,16 @@ function AppMvContent(props:Props) {
     }
   },[props.loading])
   return (
-    <AppContents name={props.name}>
+    <section>
       <div className={mv.app_mv}>
         {props.loading ?
           <p ref={textRef} className={mv.app_mv_text} style={{
             opacity : 0
           }}>
-          Hi!! Hello.<br />My name is Toru Sakari.<br />I'm a front-end engineer</p> :
+          Hello!!<br />My name is Toru Sakari.<br />I'm a front-end engineer</p> :
           ''}
       </div>
-    </AppContents>
+    </section>
   );
 }
 

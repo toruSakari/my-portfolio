@@ -10,6 +10,27 @@ const PAGE_INFO = {
     url: '#skill',
     skills: [
       {
+        displayName: 'マークアップ',
+        overview: '最近業務でSassを積極的に使ってます',
+        langs: [
+          {
+            name: 'HTML5',
+            level: 5,
+            experienceYears: '3年'
+          },
+          {
+            name: 'CSS3',
+            level: 5,
+            experienceYears: '3年'
+          },
+          {
+            name: 'Sass',
+            level: 3,
+            experienceYears: '1年'
+          }
+        ]
+      },
+      {
         displayName: 'フロントエンド',
         overview: '最近はReact.jsとTypeScriptの勉強に力を入れております',
         langs: [
@@ -66,9 +87,9 @@ const PAGE_INFO = {
     works: [
       {
         name: 'YouTubeApi',
-        pageUrl: '',
-        image: 'tetris.jpg',
-        overview: '',
+        pageUrl: 'https://myapp-77c9a.firebaseapp.com/home',
+        image: 'youtube.jpg',
+        overview: '会員登録機能、お気に入り機能、シェア機能、検索機能があります。',
         usingTechnology: [
           'HTML5',
           'CSS3',
@@ -81,7 +102,7 @@ const PAGE_INFO = {
         name: 'TETRIS',
         pageUrl: '',
         image: 'tetris.jpg',
-        overview: '',
+        overview: 'スコア機能、ブロック回転機能',
         usingTechnology: [
           'HTML5',
           'JavaScript',
