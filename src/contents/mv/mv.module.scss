@@ -43,5 +43,9 @@
     @include media-query(md){
       top: 47%;
     }
+    @include media-query(sm){
+      font-size: 5.5vw;
+      width: 65%;
+    }
   }
 }

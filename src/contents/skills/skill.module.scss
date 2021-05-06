@@ -23,7 +23,7 @@
     }
   }
   &_overview{
-    font-size: 16px;
+    font-size: 18px;
     color: map-get($text-colors , 'secondary');
     text-align: left;
     margin-top: 20px;
@@ -36,7 +36,7 @@
 
 .card{
   @include card;
-  min-width: 250px;
+  min-width: 290px;
   margin-right: auto !important;
   margin-left: auto !important;
   &_wrapper{
@@ -59,6 +59,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 18px;
     @include media-query(md){
       margin-top: 15px;
       font-size: 14px;
