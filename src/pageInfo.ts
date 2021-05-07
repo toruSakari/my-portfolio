@@ -86,6 +86,19 @@ const PAGE_INFO = {
     url: '#works',
     works: [
       {
+        name: 'ポートフォリオ',
+        pageUrl: '#',
+        image: 'portfolio.jpg',
+        overview: 'jsonによるページの情報管理',
+        usingTechnology: [
+          'HTML5',
+          'CSS3',
+          'React',
+          'Sass',
+          'TypeScript',
+        ]
+      },
+      {
         name: 'YouTubeApi',
         pageUrl: 'https://myapp-77c9a.firebaseapp.com/home',
         image: 'youtube.jpg',
